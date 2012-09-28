@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fallout Console Hacking</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="fallouthack.js"></script>
+<script src="fallouthackui.js"></script>
+<script>
+  var fh = new Fallout_hack();
+
+  $(document).ready(function() {
+	  $('#button').click(function(event) {
+		  var guesstext = $('#text').val();
+
+		  fh.addguess(guesstext);
+		  
+		  ui.addlist('#valid', fh.valid);
+		  ui.addlist('#invalid', fh.invalid);
+	  });
+
+	  $('input:text').focus(function() { 
+		  $(this).select(); });
+	  
+	  // click button when enter key is pressed on text
+	  $('input:text').keyup(function(e) {
+		  if (e.keyCode === 13) $('#button').click();
+	  });
+  });
+</script>
+</head>
+
+<body>
+<div id='inputdiv'>
+<input id='text' type='text' placeholder='Add guesses...'></input>
+<button id='button'>add text</button>
+</div>
+
+<div id='cluesdiv'>
+<ul id='clues'></ul>
+</div>
+
+<div id='listdiv'>
+	<ul>
+		<div id='valid'>
+		</div>
+	
+		<div id='invalid'>
+		</div>
+	</ul>
+</div>
+
+
+
+</body>
+</html>

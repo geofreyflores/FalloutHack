@@ -14,11 +14,11 @@ var ui = {
 		    $('input:text').focus();
 			
 	    }
-    }
+    },
 
 	valid : function() {
     	return $(id+' li').toArray().map(function(elem) { 
 			return elem.innerHTML; 
-		})
+		});
     }
 };

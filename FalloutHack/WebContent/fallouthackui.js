@@ -8,7 +8,7 @@ var ui = {
       	  var elem = { html : list[i] };
 	      $('<li/>', elem).hide().appendTo(id).fadeIn();
       	} else {
-      		ui.showError("<strong>" list[i] + "</strong> is already in the list.");
+      		ui.showError("<strong>" + list[i] + "</strong> is already in the list.");
       	}
       }
       $('input:text').focus();

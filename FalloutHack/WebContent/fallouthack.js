@@ -4,14 +4,14 @@ function Fallout_hack() {
   this.valid = [];
   this.invalid = [];
   
-  var isvalid = (this.isvalid = function(guess) {
+  this.isvalid = function(guess) {
     for (var word in this.matches_fn) {
       if (!this.matches_fn[word](guess) ) {
 	    return false;
 	  }
     }
 	return true;
-  });
+  };
   
   /* add a guess, and filter if it matches existing clues or not */
   this.addguess = function(guesses) {
@@ -40,7 +40,7 @@ function Fallout_hack() {
     if (matchnum < 1 || word.length < matchnum) return;
     this.valid.splice(this.valid.indexOf(word), 1); // remove from valid list
     // create dummy obj that can be used to revalidate valid guesses
-    var tmpobj = { matches_fn : {} };
+    var tmpobj = { matches_fn : {}, isvalid = this.isvalid };
     this.matches_fn[word] = (tmpobj.matches_fn[word] = matches(word, matchnum) );
     
     // re-validate valid guesses

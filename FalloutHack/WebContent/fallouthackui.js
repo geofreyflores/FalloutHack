@@ -1,6 +1,6 @@
 var ui = {
     addlist : function(id, list) {
-	  hideError();
+	  ui.hideError();
 	  list = Array.prototype.slice.call(arguments, 1);
 	 
       for (var i = 0; i < list.length; i++) {
@@ -8,7 +8,7 @@ var ui = {
       	  var elem = { html : list[i] };
 	      $('<li/>', elem).hide().appendTo(id).fadeIn();
       	} else {
-      		showError(list[i] + " is already in the list.");
+      		ui.showError(list[i] + " is already in the list.");
       	}
       }
       $('input:text').focus();

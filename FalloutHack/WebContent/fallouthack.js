@@ -1,26 +1,22 @@
-
 function Fallout_hack() {
   this.matches_fn = {};
   
   this.valid = [];
   this.invalid = [];
   
+  this.isvalid = function(guess) {
+    for (var word in this.matches_fn) {
+      if (!this.matches_fn[word](guess) ) {
+	    return false;
+	  }
+    }
+	return true;
+  };
+  
   /* add a guess, and filter if it matches existing clues or not */
   this.addguess = function(guesses) {
     guesses = Array.prototype.slice.call(arguments, 0);
-    
-    var valid = guesses.filter(function(guess) {
-      for (var word in this.matches_fn) {
-        if (!this.matches_fn[word](guess) ) {
-          this.invalid.push(guess); // i don't care if it's a duplicate
-          this.valid.splice(this.valid.indexOf(guess), 1);
-          return false;
-        }
-      }
-      return true;
-    });
-    
-    for (var i = 0; i < valid.length; i++) this.valid.push(valid[i]);
+    return guesses.filter(this.isvalid);
   };
   
   /* return function that returns true if match 

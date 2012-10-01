@@ -20,11 +20,11 @@ var ui = {
     },
     
     hideError : function() {
-    	$('error').html('').fadeOut();
+    	$('#error').html('').fadeOut();
     },
     
     showError : function(errorMsg) {
-    	$('error').html(errorMsg).fadeOut();
+    	$('#error').html(errorMsg).fadeOut();
     },
     
     addclue : function(clue, occ) {

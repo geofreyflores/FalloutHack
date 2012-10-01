@@ -44,7 +44,7 @@ function Fallout_hack() {
     this.matches_fn[word] = (tmpobj.matches_fn[word] = matches(word, matchnum) );
     
     // re-validate valid guesses
-    addguess.call(tmpobj, this.valid);
+    this.addguess.call(tmpobj, this.valid);
   };
   
   /* in case user screwed up and added an invalid clue; re-validate invalid guesses */

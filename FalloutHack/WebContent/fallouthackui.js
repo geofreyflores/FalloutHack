@@ -24,7 +24,7 @@ var ui = {
     },
     
     showError : function(errorMsg) {
-    	$('#error').html(errorMsg).fadeOut();
+    	$('#error').html(errorMsg).fadeIn();
     },
     
     addclue : function(clue, occ) {

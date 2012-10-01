@@ -40,7 +40,7 @@ function Fallout_hack() {
     if (matchnum < 1 || word.length < matchnum) return;
     this.valid.splice(this.valid.indexOf(word), 1); // remove from valid list
     // create dummy obj that can be used to revalidate valid guesses
-    var tmpobj = { matches_fn : {}, isvalid = this.isvalid };
+    var tmpobj = { matches_fn : {}, isvalid : this.isvalid };
     this.matches_fn[word] = (tmpobj.matches_fn[word] = matches(word, matchnum) );
     
     // re-validate valid guesses

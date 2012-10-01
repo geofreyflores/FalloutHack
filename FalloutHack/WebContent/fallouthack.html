@@ -12,19 +12,18 @@
   var fh = new Fallout_hack();
 
   $(document).ready(function() {
-	  var addguess = function(guesstext) {
-		  var id = fh.isvalid(guesstext) ? '#valid' : '#invalid';
-		  ui.addlist(id, guesstext);
-	  };
+      var addguess = function(guesstext) {
+      var id = fh.isvalid(guesstext) ? '#valid' : '#invalid';
+        ui.addlist(id, guesstext);
+      };
 
-	  var addclue = function(clue, occ) {
-		  ui.addclue(clue, occ);
-		  fh.addclue(clue, occ);
-	  }
+      var addclue = function(clue, occ) {
+        ui.addclue(clue, occ);
+        fh.addclue(clue, occ);
+      }
 	  
 	  $('#button').click(function(event) {
-		  var guesstext = $('#text').val();
-          var text = guesstext.split(',');
+          var text = $('#text').val().split(',');
           var clue = text[0], occ = text[1];
           
 		  if (occ === undefined) {

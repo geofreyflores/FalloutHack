@@ -4,14 +4,14 @@ function Fallout_hack() {
   this.valid = [];
   this.invalid = [];
   
-  this.isvalid = function(guess) {
+  var isvalid = (this.isvalid = function(guess) {
     for (var word in this.matches_fn) {
       if (!this.matches_fn[word](guess) ) {
 	    return false;
 	  }
     }
 	return true;
-  };
+  });
   
   /* add a guess, and filter if it matches existing clues or not */
   this.addguess = function(guesses) {

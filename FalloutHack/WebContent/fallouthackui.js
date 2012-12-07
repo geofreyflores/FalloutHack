@@ -28,11 +28,11 @@ var ui = {
     },
     
     addclue : function(clue, occ) {
-    	var elem = {
-    	  span : { class: 'clue' , html: clue },
-    	  span : { class: 'occ',   html: occ }
-    	};
-    	$('<li/>', elem).hide().appendTo('#clues').fadeIn();
+    	var elem = $('<li/>');
+    	$('<span/>', { class: 'clue', html: clue }).appendTo(elem);
+    	$('<span/>', { class: 'occ', html: occ }).appendTo(elem);
+    	
+    	elem.hide().appendTo('#clues').fadeIn();
     },
 
     getlist : function(id) {

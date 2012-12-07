@@ -32,7 +32,7 @@ var ui = {
     	  span : { class: 'clue' , html: clue },
     	  span : { class: 'occ',   html: occ }
     	};
-    	$('<li/>', elem).hide().appendTo('clues').fadeIn();
+    	$('<li/>', elem).hide().appendTo('#clues').fadeIn();
     },
 
     getlist : function(id) {

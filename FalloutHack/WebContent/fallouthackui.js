@@ -33,6 +33,7 @@ var ui = {
     	$('<span/>', { class: 'occ', html: occ }).appendTo(elem);
     	
     	elem.hide().appendTo('#clues').fadeIn();
+    	$('input:text').focus();
     },
 
     getlist : function(id) {
